@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Clone repository') {
             steps {
-                git branch: 'main', url: 'https://github.com/DoingsLLC/argocd-amazon-manifest.git'
+                git branch: 'main', url: 'https://github.com/DoingsLLC/argocd2-amazon-manifest.git'
             }
         }
 
@@ -25,7 +25,7 @@ pipeline {
                         sh "git status"
                         sh "git add ."
                         sh "git commit -m 'Done by Jenkins Job changemanifest: ${env.BUILD_NUMBER}'"
-                        sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/DoingsLLC/argocd-amazon-manifest.git HEAD:main"
+                        sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/DoingsLLC/argocd2-amazon-manifest.git HEAD:main"
                     }
                 }
             }
